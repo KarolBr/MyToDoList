@@ -1,0 +1,117 @@
+#include <gtest/gtest.h>
+#include "Word.h"
+#include "Dictionary.h"
+
+
+
+
+class ProjectTest : public ::testing::Test
+{
+    protected:
+    ProjectTest() {};
+    ~ProjectTest() override {};
+
+    void SetUp() override{};
+    void TearDown() override {};
+    
+};
+
+
+
+TEST_F(ProjectTest,ObjectDictionaryCanBeCreatedWithParameters)
+{
+    Dictionary dict("myDictionary");
+    Word w1("house","dom, miejsce zamieszkania");
+    dict.addWord(w1);
+}
+
+
+TEST_F(ProjectTest,ObjectDictionaryCanBeCreatedAndAddWords)
+{
+    Dictionary dict("myDictionary");
+    Word w1("house","dom, miejsce zamieszkania");
+    Word w2("imposed","narzucony, wymuszony");
+    Word w3("relevant","odpowiedni");
+    Word w4("disclose","ujawnić, wyjawiać, odsłonić");
+    dict.addWord(w1);
+    dict.addWord(w2);
+    dict.addWord(w3);
+    dict.addWord(w4);
+}
+
+TEST_F(ProjectTest,ObjectWordCanBeCreatedAndAddNewDefinition)
+{
+    Word w1("house","dom, miejsce zamieszkania");
+    w1.addDefinition("budynek mieszkalny");   
+}
+
+TEST_F(ProjectTest,GetAllWordDefinitions)
+{
+    Word w1("house","dom, miejsce zamieszkania");
+    w1.addDefinition("budynek mieszkalny"); 
+    for(auto item: w1.getDefinitions())
+    {
+        std::cout<<item<<'\n';
+    }  
+}
+
+/*
+TEST_F(ProjectTest,CreatedObjectCanReturnCertainValue)
+{
+    Dictionary dict("house","dom, miejsce zamieszkania");
+    EXPECT_EQ("dom, miejsce zamieszkania",dict.getDefinition("house"));
+}
+
+
+TEST_F(ProjectTest,NewValueCanBeAddToTheDictionary)
+{
+    Dictionary dict;
+    dict.addDefinition("house","dom, miejsce zamieszkania");
+    EXPECT_EQ("dom, miejsce zamieszkania",dict.getDefinition("house"));
+}
+
+
+TEST_F(ProjectTest,ObjectReturnTextWhenDidntFindWord)
+{
+    Dictionary dict("shelter","schronienie");
+    EXPECT_EQ("NOT FOUND",dict.getDefinition("car"));
+}
+
+TEST_F(ProjectTest,ValueCanBeModyfing)
+{
+    Dictionary dict;
+    dict.addDefinition("house","dom, miejsce zamieszkania");
+    EXPECT_EQ("dom, miejsce zamieszkania",dict.getDefinition("house"));
+    dict.addDefinition("house","dom, miejsce zamieszkania np. dom rodzinny");
+    EXPECT_EQ("dom, miejsce zamieszkania np. dom rodzinny",dict.getDefinition("house"));
+}
+
+TEST_F(ProjectTest,ObjectPrintAllWordAndDefinition)
+{
+    Dictionary dict("shelter","schronienie");
+    dict.printAll();
+    //EXPECT_EQ("NOT FOUND",dict.getDefinition("car"));
+}
+
+
+
+// TEST_F(ProjectTest,IfObjectWordIsCreatedMethodsGetShouldReturnValues)
+// {
+//     Word word("name","imię");
+//     EXPECT_EQ("name",word.getWord());
+//     //EXPECT_EQ(word.getDateAndTimeToString(),word.getCreateDate());
+//     EXPECT_EQ(0,word.getKnowingLevel());
+// }
+
+
+
+// TEST_F(ProjectTest,ObjectMyFileCanBeCreated)
+// {
+//     MyFile file("myNewFile.txt");
+// }
+
+
+*/
+
+
+
