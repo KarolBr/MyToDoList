@@ -1,6 +1,6 @@
 SET(SRCS 
-    Dictionary.cpp 
-    Word.cpp)	
+    Task.cpp 
+    )	
 
 
 add_library(${CMAKE_PROJECT_NAME}_LIB STATIC ${SRCS})

@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
-#include "Word.h"
-#include "Dictionary.h"
+#include "Task.h"
+#include "ToDoList.h"
 
 
 
@@ -17,43 +17,6 @@ class ProjectTest : public ::testing::Test
 };
 
 
-
-TEST_F(ProjectTest,ObjectDictionaryCanBeCreatedWithParameters)
-{
-    Dictionary dict("myDictionary");
-    Word w1("house","dom, miejsce zamieszkania");
-    dict.addWord(w1);
-}
-
-
-TEST_F(ProjectTest,ObjectDictionaryCanBeCreatedAndAddWords)
-{
-    Dictionary dict("myDictionary");
-    Word w1("house","dom, miejsce zamieszkania");
-    Word w2("imposed","narzucony, wymuszony");
-    Word w3("relevant","odpowiedni");
-    Word w4("disclose","ujawnić, wyjawiać, odsłonić");
-    dict.addWord(w1);
-    dict.addWord(w2);
-    dict.addWord(w3);
-    dict.addWord(w4);
-}
-
-TEST_F(ProjectTest,ObjectWordCanBeCreatedAndAddNewDefinition)
-{
-    Word w1("house","dom, miejsce zamieszkania");
-    w1.addDefinition("budynek mieszkalny");   
-}
-
-TEST_F(ProjectTest,GetAllWordDefinitions)
-{
-    Word w1("house","dom, miejsce zamieszkania");
-    w1.addDefinition("budynek mieszkalny"); 
-    for(auto item: w1.getDefinitions())
-    {
-        std::cout<<item<<'\n';
-    }  
-}
 
 /*
 TEST_F(ProjectTest,CreatedObjectCanReturnCertainValue)
