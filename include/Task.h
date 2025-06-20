@@ -7,14 +7,14 @@ class Task {
 private:
   std::string description;
   bool done;
-  std::string creationDate;
+  std::string createDate;
   std::string doneDate;
   // Operations
 public:
   Task (std::string description);
   void setDone ();
   std::string getDescription ();
-  std::string getCreationDate ();
+  std::string getCreateDate ();
   std::string getDoneDate ();
   bool getDone ();
 };
