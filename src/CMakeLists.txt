@@ -1,5 +1,7 @@
 SET(SRCS 
-    Task.cpp 
+    Task.cpp
+    ToDoList.cpp
+    Tools.cpp
     )	
 
 

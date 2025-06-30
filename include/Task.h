@@ -1,3 +1,6 @@
+#ifndef TASK_H
+#define TASK_H
+
 #include <string>
 
 
@@ -19,3 +22,4 @@ public:
   bool getDone ();
 };
 
+#endif //TASK_H

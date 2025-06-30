@@ -1,10 +1,11 @@
 #include <string>
 #include "Task.h"
+#include "Tools.h"
 
 Task::Task(std::string description):description(description)
 {
     done = false;
-    createDate = 
+    createDate = currentTimestamp();
 }
 
 void Task::setDone()
@@ -26,5 +27,5 @@ std::string Task::getDoneDate ()
 }
 bool Task::getDone ()
 {
-    
+    return done;
 }

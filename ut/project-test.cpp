@@ -1,6 +1,7 @@
 #include <gtest/gtest.h>
 #include "Task.h"
 #include "ToDoList.h"
+#include "Tools.h"
 
 
 
@@ -16,6 +17,16 @@ class ProjectTest : public ::testing::Test
     
 };
 
+
+TEST_F(ProjectTest,ObjectCanBeCreated)
+{
+    Task t1("Podpisac umowe");
+    Task t2("Wypłacic gotówkę");
+    ToDoList today;
+    today.addTask(t2);
+    today.addTask(t1);
+    today.printAll();
+}
 
 
 /*
