@@ -11,6 +11,7 @@ Task::Task(std::string description):description(description)
 void Task::setDone()
 {
     done = true;
+    doneDate = currentTimestamp();
 }
 
 std::string Task::getDescription ()
