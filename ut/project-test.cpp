@@ -20,12 +20,15 @@ class ProjectTest : public ::testing::Test
 
 TEST_F(ProjectTest,ObjectCanBeCreated)
 {
-    Task t1("Podpisac umowe");
-    Task t2("Wypłacic gotówkę");
+    Task t1("Sign an agreement");
+    Task t2("Take money out");
     ToDoList today;
     today.addTask(t2);
     today.addTask(t1);
     today.printAll();
+    today.setTaskDone(1);
+    today.printAll();
+    today.printAll(true);
 }
 
 
