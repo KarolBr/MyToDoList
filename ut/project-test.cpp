@@ -29,6 +29,9 @@ TEST_F(ProjectTest,ObjectCanBeCreated)
     today.setTaskDone(1);
     today.printAll();
     today.printAll(true);
+    today.removeAllDoneTasks();
+    today.printAll();
+    today.printAll(true);
 }
 
 
