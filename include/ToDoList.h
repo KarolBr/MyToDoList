@@ -13,6 +13,7 @@ public:
   void addTask (Task task);
   void setTaskDone (int index);
   void printAll (bool done = false);
+  void removeAllDoneTasks();
 };
 
 #endif // !TODOLIST_H
